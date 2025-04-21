@@ -9,7 +9,13 @@ module.exports = {
 
   presets: [require('nativewind/preset')],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'warao-brown': '#3B2414',
+        'warao-green-dark': '#747F64',
+        'warao-sandcolor': '#E8E2D8',
+      },
+    },
   },
   plugins: [],
 };
