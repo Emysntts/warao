@@ -2,6 +2,9 @@
   "expo": {
     "name": "warao-front",
     "slug": "warao-front",
+    "androidNavigationBar": {
+      "visible": "sticky-immersive"
+    } ,
     "version": "1.0.0",
     "web": {
       "favicon": "./assets/favicon.png"
@@ -15,7 +18,8 @@
         {
           "launchMode": "most-recent"
         }
-      ]
+      ],
+      "expo-font"
     ],
     "orientation": "portrait",
     "icon": "./assets/icon.png",
