@@ -10,13 +10,16 @@ export const styles = StyleSheet.create({
 
   imageContainer: {
     width: '100%',
-    height: '60%',
+    height: '100%',
     backgroundColor: '#3B2414',
     justifyContent: 'center',
     alignItems: 'center',
     paddingVertical: 30,
     borderBottomEndRadius: 50,
     borderBottomStartRadius: 50,
+    overflow: 'hidden',
+    position: 'relative',
+    zIndex: 1,
   },
 
   image: {
@@ -27,9 +30,12 @@ export const styles = StyleSheet.create({
   },
 
   textContainer: {
-    flex: 1,
+    position: 'absolute',
+    bottom: 0,
+    width: '100%',
     padding: 20,
     alignItems: 'center',
+    backgroundColor: '#E8E1DA',
   },
   
   title: {
