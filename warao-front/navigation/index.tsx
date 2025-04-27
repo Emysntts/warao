@@ -3,10 +3,12 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import TabNavigator from './tab-navigator';
 import HomeScreen from '../screens/HomeScreen';
+import ModulesPage from '../screens/ModulesPage';
 
 export type RootStackParamList = {
   Home: undefined;
   TabNavigator: undefined;
+  ModulesPage: undefined;
 };
 
 const Stack = createStackNavigator<RootStackParamList>();
@@ -25,6 +27,12 @@ export default function RootStack() {
           component={TabNavigator}
           options={{ headerShown: false }}
         />
+        
+        <Stack.Screen 
+        name="ModulesPage"
+        component={ModulesPage} 
+        options={{ headerShown: false }} />
+    
       </Stack.Navigator>
     </NavigationContainer>
   );

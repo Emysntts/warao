@@ -1,7 +1,8 @@
 import { Ionicons } from '@expo/vector-icons';
 import { useFonts, Poppins_600SemiBold } from '@expo-google-fonts/poppins';
 import { View, Text, TouchableOpacity } from 'react-native';
-
+import { useNavigation, NavigationProp } from '@react-navigation/native';
+import { RootStackParamList } from '../navigation';
 type ExerciseCompProps = {
   text: string;
   image?: string;
@@ -11,11 +12,19 @@ type ExerciseCompProps = {
 
 const ExerciseComp = (props: ExerciseCompProps) => {
   const [fonts] = useFonts({ Poppins_600SemiBold });
-
+  const navigation = useNavigation<NavigationProp<RootStackParamList>>();
   if (!fonts) return null;
 
+  const handlePress = () => {
+    if (props.isUnlocked) {
+      navigation.navigate('ModulesPage');
+    } else {
+      alert('Este módulo está bloqueado!');
+    }
+  };
+
   return (
-    <TouchableOpacity activeOpacity={0.8} onPress={props.onPress} className="my-3">
+    <TouchableOpacity activeOpacity={0.8} onPress={handlePress} className="my-3">
       <View className="flex  w-full flex-row  items-center justify-between rounded-lg bg-white p-5">
         <View className="flex flex-row items-center gap-5">
           <View className="h-16 w-16 rounded-full bg-blue-950 " />
