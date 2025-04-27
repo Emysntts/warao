@@ -3,6 +3,7 @@ import CustomTabNavigator from 'components/CustomTabNavigator';
 import HeadModules from 'components/HeadModules';
 import ExerciseLauncher from 'components/ExerciseLauncher';
 import { ScrollView } from 'react-native-gesture-handler';
+import { StatusBar } from 'expo-status-bar';
 
 const ModulesPage = () => {
   const colorPalette = [
@@ -18,6 +19,8 @@ const ModulesPage = () => {
 
   return (
     <SafeAreaView style={styles.container}>
+      <StatusBar backgroundColor='#3B2414' style="light" />
+
       <HeadModules />
 
       <ScrollView contentContainerStyle={styles.scrollContent}>
@@ -32,7 +35,10 @@ const ModulesPage = () => {
       </ScrollView>
 
       <CustomTabNavigator />
+      
     </SafeAreaView>
+    
+    
   );
 };
 
