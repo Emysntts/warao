@@ -1,24 +1,44 @@
-import {StyleSheet, SafeAreaView } from 'react-native';
+import { StyleSheet, SafeAreaView } from 'react-native';
 import CustomTabNavigator from 'components/CustomTabNavigator';
 import HeadModules from 'components/HeadModules';
-
-const modules = [
-  { id: 1, title: 'Saudações ao chegar e ao partir', color: '#5A4B81' },
-  { id: 2, title: 'Saudações ao chegar e ao partir', color: '#F26D3D' },
-  { id: 3, title: 'Saudações ao chegar e ao partir', color: '#6D7D4E' },
-  { id: 4, title: 'Saudações ao chegar e ao partir', color: '#C97A5A' },
-  { id: 5, title: 'Saudações ao chegar e ao partir', color: '#F2D28B' },
-];
+import ExerciseLauncher from 'components/ExerciseLauncher';
+import { ScrollView } from 'react-native-gesture-handler';
+import { StatusBar } from 'expo-status-bar';
 
 const ModulesPage = () => {
+  const colorPalette = [
+    '#5A4B81', // Roxo
+    '#FF6B35', // Laranja
+    '#6B8E23', // Verde
+    '#D2691E', // Marrom
+    '#FFD700', // Amarelo
+    '#FCE2A9', // Bege
+    '#8A2BE2', // Azul
+    '#FF4500', // Vermelho
+  ];
+
   return (
-    <SafeAreaView style={styles.container}> 
-        <HeadModules />
+    <SafeAreaView style={styles.container}>
+      <StatusBar backgroundColor='#3B2414' style="light" />
+
+      <HeadModules />
+
+      <ScrollView contentContainerStyle={styles.scrollContent}>
+        {colorPalette.map((color, index) => (
+          <ExerciseLauncher
+            key={index}
+            exerciseId={(index + 1).toString()}
+            title={`Exercício ${index + 1}`}
+            circleCard={color}
+          />
+        ))}
+      </ScrollView>
 
       <CustomTabNavigator />
       
-      
     </SafeAreaView>
+    
+    
   );
 };
 
@@ -27,18 +47,10 @@ export default ModulesPage;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#FDF6E3', // Cor de fundo bege
+    backgroundColor: '#FDF6E3',
   },
-  content: {
-    flex: 1,
+  scrollContent: {
     padding: 16,
+    paddingBottom: 80,
   },
-
-  header: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    color: '#3B2414',
-    marginBottom: 16,
-  },
- 
 });
