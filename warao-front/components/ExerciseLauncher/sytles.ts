@@ -30,7 +30,6 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 16,
     fontWeight: 'bold',
-    color: '#5A4B81',
     marginBottom: 8,
 
   },
@@ -39,13 +38,11 @@ const styles = StyleSheet.create({
     width: "55%",
     aspectRatio: 1,
     borderRadius: 1000,
-    backgroundColor: '#5A4B81',
     position: 'absolute',
     top: -45,
     left: -45,
   },
   button: {
-    backgroundColor: '#5A4B81',
     paddingVertical: 8,
     paddingHorizontal: 16,
     borderRadius: 20,
