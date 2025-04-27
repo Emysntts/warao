@@ -1,6 +1,6 @@
-import { View, Text, StyleSheet, SafeAreaView } from 'react-native';
+import {StyleSheet, SafeAreaView } from 'react-native';
 import CustomTabNavigator from 'components/CustomTabNavigator';
-
+import HeadModules from 'components/HeadModules';
 
 const modules = [
   { id: 1, title: 'Saudações ao chegar e ao partir', color: '#5A4B81' },
@@ -12,11 +12,8 @@ const modules = [
 
 const ModulesPage = () => {
   return (
-    <SafeAreaView style={styles.container}>
-      <View style={styles.content}>
-        <Text style={styles.header}>Módulos</Text>
-        {/* Adicione aqui o conteúdo principal, como os módulos */}
-      </View>
+    <SafeAreaView style={styles.container}> 
+        <HeadModules />
 
       <CustomTabNavigator />
       
@@ -33,9 +30,10 @@ const styles = StyleSheet.create({
     backgroundColor: '#FDF6E3', // Cor de fundo bege
   },
   content: {
-    flex: 1, // Garante que o conteúdo ocupe o espaço disponível
+    flex: 1,
     padding: 16,
   },
+
   header: {
     fontSize: 24,
     fontWeight: 'bold',

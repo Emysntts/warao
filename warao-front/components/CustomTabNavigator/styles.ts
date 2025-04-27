@@ -10,9 +10,14 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     borderTopLeftRadius: 10,
     borderTopRightRadius: 10,
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    right: 0,
+    
   },
 
-  
+
   iconContainer: {
     padding: 10,
   },

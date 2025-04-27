@@ -1,4 +1,3 @@
-import React from 'react';
 import { SafeAreaView, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import type { StackNavigationProp } from '@react-navigation/stack';
@@ -28,7 +27,6 @@ export default HomeScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#3B2414', // Fundo marrom
-
+    backgroundColor: '#3B2414', 
   },
 });
