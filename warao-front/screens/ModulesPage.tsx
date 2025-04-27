@@ -1,5 +1,6 @@
-import React from 'react';
-import { View, Text, ScrollView, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, SafeAreaView } from 'react-native';
+import CustomTabNavigator from 'components/CustomTabNavigator';
+
 
 const modules = [
   { id: 1, title: 'Saudações ao chegar e ao partir', color: '#5A4B81' },
@@ -11,19 +12,16 @@ const modules = [
 
 const ModulesPage = () => {
   return (
-    <View style={styles.container}>
-      <Text style={styles.header}>Módulos</Text>
-      <ScrollView>
-        {modules.map((module) => (
-          <View key={module.id} style={[styles.card, { backgroundColor: module.color }]}>
-            <Text style={styles.cardTitle}>{module.title}</Text>
-            <TouchableOpacity style={[styles.button, { backgroundColor: module.color }]}>
-              <Text style={styles.buttonText}>Jogar</Text>
-            </TouchableOpacity>
-          </View>
-        ))}
-      </ScrollView>
-    </View>
+    <SafeAreaView style={styles.container}>
+      <View style={styles.content}>
+        <Text style={styles.header}>Módulos</Text>
+        {/* Adicione aqui o conteúdo principal, como os módulos */}
+      </View>
+
+      <CustomTabNavigator />
+      
+      
+    </SafeAreaView>
   );
 };
 
@@ -33,6 +31,9 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#FDF6E3', // Cor de fundo bege
+  },
+  content: {
+    flex: 1, // Garante que o conteúdo ocupe o espaço disponível
     padding: 16,
   },
   header: {
@@ -41,26 +42,5 @@ const styles = StyleSheet.create({
     color: '#3B2414',
     marginBottom: 16,
   },
-  card: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    borderRadius: 12,
-    padding: 16,
-    marginBottom: 16,
-  },
-  cardTitle: {
-    fontSize: 16,
-    fontWeight: 'bold',
-    color: '#FFFFFF',
-  },
-  button: {
-    paddingVertical: 8,
-    paddingHorizontal: 16,
-    borderRadius: 8,
-  },
-  buttonText: {
-    color: '#FFFFFF',
-    fontWeight: 'bold',
-  },
+ 
 });

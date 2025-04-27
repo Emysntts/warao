@@ -13,6 +13,7 @@ export default function TabLayout() {
         animation: 'shift',
         tabBarShowLabel: false,
         tabBarActiveBackgroundColor: '#3B2414',
+        
         tabBarIcon: () => <Ionicons name="home" size={28} color="white" />,
         tabBarStyle: {
           borderTopLeftRadius: 10,
