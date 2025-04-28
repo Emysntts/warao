@@ -505,3 +505,156 @@ dicionario_horarios_espanhol = {
     "Y media": "Akari",
     "Once horas" : "Yaja mojoreku arai jisaka"
 }
+
+dicionario_roupas_portugues_warao = {
+    "Malha": "Jiyaka ajara aisiko",
+    "Camisa": "Jiyaka abotona isiko",
+    "Calça": "Kabisikuju",
+    "Bermuda": "Kabisikuju kaba",
+    "Cueca": "Nibora ajiyaka eku",
+    "Calcinha": "Tida ajiyaka eku",
+    "Vestido": "Jiyaka",
+    "Saia": "Naba akari",
+    "Meias": "Omu abatu",
+    "Sapato (Calçado)": "Omu anoko",
+    "Boné": "Yasi",
+    "Ferro de passar roupa": "Jima aiji",
+    "Passar roupa": "Jima jiyaka tiabatu",
+}
+
+
+dicionario_roupas_espanhol_warao = {
+    "Malla": "Jiyaka ajara aisiko",
+    "Camisa": "Jiyaka abotona isiko",
+    "Pantalones": "Kabisikuju",
+    "Bermuda": "Kabisikuju kaba",
+    "Calzoncillo": "Nibora ajiyaka eku",
+    "Braga / Bombacha": "Tida ajiyaka eku",
+    "Vestido": "Jiyaka",
+    "Falda / Pollera": "Naba akari",
+    "Calcetines": "Omu abatu",
+    "Zapato": "Omu anoko",
+    "Gorra": "Yasi",
+    "Plancha": "Jima aiji",
+    "Planchar la Ropa": "Jima jiyaka tiabatu",
+}
+
+
+dicionario_cores_portugues_warao = {
+    "Azul": "Jebura",
+    "Vermelho": "Simo",
+    "Amarelo": "Jene",
+    "Verde": "Jebura",
+    "Branco": "Joko",
+    "Preto": "Ana",
+    "Laranja": "Jene",
+    "Rosa": "Simo simo",
+}
+
+dicionario_cores_espanhol_warao = {
+    "Azul": "Jebura",
+    "Rojo": "Simo",
+    "Amarillo": "Jene",
+    "Verde": "Jebura",
+    "Blanco": "Joko",
+    "Negro": "Ana",
+    "Naranja": "Jene",
+    "Rosa / Rosado": "Simo simo",
+}
+
+dicionario_familia_portugues_warao = {
+    "Mãe": "Dani",
+    "Pai": "Dima",
+    "Filha": "Aukatida",
+    "Filho": "Auka",
+    "Neto (Neta)": "Anatoro",
+    "Primo (Prima)": "Maraisama",
+    "Irmão": "Daje",
+}
+
+dicionario_familia_espanhol_warao = {
+    "Madre (Mamá)": "Dani",
+    "Padre (Papá)": "Dima",
+    "Hija": "Aukatida",
+    "Hijo": "Auka",
+    "Nieto (Nieta)": "Anatoro",
+    "Primo (Prima)": "Maraisama",
+    "Hermano": "Daje",
+}
+
+dicionario_familia_portugues_warao = {
+    "Irmã": "Daiba",
+    "Cunhada": "Mabitida",
+    "Cunhado": "Damitu",
+    "Tio": "Daku",
+    "Tia": "Daukatida",
+    "Avó": "Natu",
+    "Avô": "Nobo",
+    "Esposo": "Anibora",
+    "Mulher": "Atida",
+    "Nenê": "Noboto",
+    "Namorado (Namorada)": "Aturubita",
+}
+
+dicionario_familia_espanhol_warao = {
+    "Hermana": "Daiba",
+    "Cuñada": "Mabitida",
+    "Cuñado": "Damitu",
+    "Tío": "Daku",
+    "Tía": "Daukatida",
+    "Abuela": "Natu",
+    "Abuelo": "Nobo",
+    "Marido (Esposo)": "Anibora",
+    "Mujer (Esposa)": "Atida",
+    "Bebé": "Noboto",
+    "Novio (Novia)": "Aturubita",
+}
+
+dicionario_perguntas_portugues_warao = {
+    "Quem?": "Sinaba",
+    "Onde?": "Kasaba",
+    "Cadê?": "Kasaba",
+    "O que?": "Sina",
+    "Por que?": "Katukane",
+    "Por causa de quê?": "Katukane",
+    "Quando?": "Katukakore",
+    "A que hora?": "Katukakore",
+    "A que horas?": "Asinaria",
+    "Como é que se fala?": "Katukane dibuya",
+    "Isso quer dizer o que?": "Tai dibukitane obonoya",
+}
+
+dicionario_perguntas_espanhol_warao = {
+    "¿Quién?": "Sinaba",
+    "¿Dónde?": "Kasaba",
+    "¿Qué?": "Sina",
+    "¿Por qué?": "Katukane",
+    "¿Cuándo?" : "Katukakore", 
+    "¿A qué horas?": "Asinaria",
+    "¿Cómo se dice?": "Katukane dibuya",
+    "Eso quiere decir...": "Tai dibukitane obonoya",
+}
+
+dicionario_perguntas_comuns_portugues_warao = {
+    "Como vai?": "Iji katukane ja",
+    "Tudo bem?": "Yakera",
+    "Como é seu nome?": "Ji wai sina",
+    "E você?": "Ama iji",
+    "Qual o nome disso?": " Tamaja awai katukane",
+    "Qual a sua nacionalidade?": "Iji kasabamo",
+    "Você é de onde?": "Kasabamo",
+    "Qual o nome da tua cidade?": "Ji jubai kasabamo",
+    "Qual fala quais línguas?": "Ji jono sina dibuya",
+}
+
+dicionario_perguntas_comuns_espanhol_warao = {
+    "¿Cómo está? / ¿Qué tal?": "Iji katukane ja",
+    "¿Todo bien?": "Yakera",
+    "¿Cómo se llama? / ¿Cuál es su nombre?": "Ji wai sina",
+    "¿Y usted?": "Ama iji",
+    "Cómo se llama esto?": "Tamaja awai katukane",
+    "¿Cuál es su nacionalidad?": "Iji kasabamo",
+    "¿De dónde es usted?": "Kasabamo",
+    "¿Cómo se llama tu ciudad?": "Ji jubai kasabamo",
+    "¿Qué idioma habla?": "Ji jono sina dibuya",
+} 

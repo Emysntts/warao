@@ -100,12 +100,10 @@ dicionario_frases_localizacao = {
     "Onde é a sala de exames?": "Jotu misanoko kasaba bajiya?",
     "Onde é a sala de medicamentos?": "Kasaba bajiya yarokota nowanoko?",
     "Onde fica o banheiro?": "Kasaba bajiya jibonoko?",
-    #Pagina 16
     "Aonde posso encontrar a policia?": "Kassaba Aidamo Tuma Ajaanako baija?",
     "Aonde posso encontrar um hospital?": "Kasaba akosa abanoko baija?",
     "Aonde posso encontrar uma farmacia?": "Kassaba ibiji arotu ajanoko?",
     "Onde posso comprar comida?": "Kasaba seke najoro nisaturo?",
-    #Pagina 17
     "Aonde posso encontrar um banheiro?": "Ka saba ine mikuna kiminoko isaka?",
     "Aonde posso dormir?": "Kasaba seke obaturo?",
     "Aonde posso comprar medicamentos?" : "Kasaba seke yarokota nisaturo?",
