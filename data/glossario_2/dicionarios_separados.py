@@ -1040,3 +1040,5 @@ dicionario_trabalho_espanhol_warao = {
     "Estoy graduado (graduada)": "Ine karata jetonae",
     "Sé...": "Naminaya",
 }
+
+# Parei na Pagina 18
