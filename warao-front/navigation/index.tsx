@@ -28,10 +28,10 @@ export default function RootStack() {
           options={{ headerShown: false }}
         />
         
-        <Stack.Screen 
+        {/* <Stack.Screen 
         name="ModulesPage"
         component={ModulesPage} 
-        options={{ headerShown: false }} />
+        options={{ headerShown: false }} /> */}
     
       </Stack.Navigator>
     </NavigationContainer>
