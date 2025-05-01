@@ -11,13 +11,13 @@ interface ExerciseLauncherProps {
   circleCard: string;
 }
 
-// type NavigationProp = StackNavigationProp<RootStackParamList, 'ExercisePage'>;
+type NavigationProp = StackNavigationProp<RootStackParamList, 'QuestionPage'>;
 
 const ExerciseLauncher: React.FC<ExerciseLauncherProps> = ({ exerciseId, title, circleCard }) => {
-  //const navigation = useNavigation<NavigationProp>();
+  const navigation = useNavigation<NavigationProp>();
 
   const handlePress = () => {
-    //navigation.navigate('ExercisePage', { id: exerciseId });
+    navigation.navigate('QuestionPage');
   };
 
   return (
