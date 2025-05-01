@@ -3,6 +3,7 @@ import { useFonts, Poppins_600SemiBold } from '@expo-google-fonts/poppins';
 import { View, Text, TouchableOpacity } from 'react-native';
 import { useNavigation, NavigationProp } from '@react-navigation/native';
 import { RootStackParamList } from '../navigation';
+import { StackExerciseLists } from 'navigation/stack-exercise-navigation';
 type ExerciseCompProps = {
   text: string;
   image?: string;
@@ -12,12 +13,12 @@ type ExerciseCompProps = {
 
 const ExerciseComp = (props: ExerciseCompProps) => {
   const [fonts] = useFonts({ Poppins_600SemiBold });
-  const navigation = useNavigation<NavigationProp<RootStackParamList>>();
+  const navigation = useNavigation<NavigationProp<StackExerciseLists>>();
   if (!fonts) return null;
 
   const handlePress = () => {
     if (props.isUnlocked) {
-      navigation.navigate('ModulesPage');
+      navigation.navigate('modules');
     } else {
       alert('Este módulo está bloqueado!');
     }
