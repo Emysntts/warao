@@ -7,9 +7,14 @@ import Options from '../components/OptionsQuestion';
 const QuestionPage = () => {
   return (
     <View style={styles.container}>
+
       <Header title="Saudações" />
-      <Question text="Pergunta....." />
-      <Options options={['A)', 'B)', 'C)', 'D)']} />
+
+      <View style={{ padding: 16 }}>
+        <Question text="Pergunta....." />
+        <Options options={['A)', 'B)', 'C)', 'D)']} />
+      </View>
+
     </View>
   );
 };
@@ -17,8 +22,8 @@ const QuestionPage = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#1A1A1A', // Fundo escuro
-    padding: 16,
+    backgroundColor: '#1A1A1A',
+    paddingVertical: 16,
   },
 });
 
