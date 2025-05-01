@@ -2,7 +2,7 @@ import React from 'react';
 import { View, TouchableOpacity, Text } from 'react-native';
 import styles from './styles';
 
-const Options = ({ options }) => {
+const Options = ({ options }: { options: string[] }) => {
   return (
     <View style={styles.optionsContainer}>
       {options.map((option, index) => (
