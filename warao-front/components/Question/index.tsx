@@ -5,7 +5,11 @@ import styles from './styles';
 const Question = ({ text }: { text: string }) => {
   return (
     <View style={styles.questionContainer}>
-      <Text style={styles.questionText}>{text}</Text>
+
+      <View style={styles.questionPequeno}>
+        <Text style={styles.questionText}>{text}</Text>
+      </View>
+
     </View>
   );
 };
