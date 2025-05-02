@@ -6,8 +6,10 @@ const Options = ({ options }: { options: string[] }) => {
   return (
     <View style={styles.optionsContainer}>
       {options.map((option, index) => (
-        <TouchableOpacity key={index} style={styles.optionButton}>
-          <Text style={styles.optionText}>{option}...</Text>
+        <TouchableOpacity key={index} style={styles.optionButton} activeOpacity={0.7}>
+          <TouchableOpacity style={styles.optionsPequeno} activeOpacity={0.7}>
+            <Text style={styles.optionText}>{option}</Text>
+          </TouchableOpacity>
         </TouchableOpacity>
       ))}
     </View>
