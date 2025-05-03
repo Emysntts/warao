@@ -19,7 +19,7 @@ const ModulesPage = () => {
     '#FF4500', // Vermelho
   ];
   const route = useRoute<RouteProp<StackExerciseLists, 'modules'>>();
-  const { text } = route.params; // Recebe o texto enviado
+  const { text } = route.params; 
 
   return (
     <SafeAreaView style={styles.container}>
@@ -34,6 +34,7 @@ const ModulesPage = () => {
             exerciseId={(index + 1).toString()}
             title={`Exercício ${index + 1}`}
             circleCard={color}
+            moduleText={text}
           />
         ))}
       </ScrollView>
