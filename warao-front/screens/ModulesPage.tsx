@@ -18,6 +18,9 @@ const ModulesPage = () => {
     '#8A2BE2', // Azul
     '#FF4500', // Vermelho
   ];
+
+  const quantidadePerguntas = 5; // Aqui vamos chamar a função aonde vai pegar a quantidade de exercicios de cada modulo
+
   const route = useRoute<RouteProp<StackExerciseLists, 'modules'>>();
   const { text } = route.params; 
 
@@ -25,20 +28,20 @@ const ModulesPage = () => {
     <SafeAreaView style={styles.container}>
       <StatusBar backgroundColor='#3B2414' style="light" />
 
-      <HeadModules titulo={text}  />
+      <HeadModules titulo={text}/>
 
       <ScrollView contentContainerStyle={styles.scrollContent}>
-        {colorPalette.map((color, index) => (
+        {Array.from({ length: quantidadePerguntas }).map((_, index) => (
           <ExerciseLauncher
             key={index}
             exerciseId={(index + 1).toString()}
             title={`Exercício ${index + 1}`}
-            circleCard={color}
+            circleCard={colorPalette[index % colorPalette.length]}
             moduleText={text}
+            quantidadePerguntas={quantidadePerguntas} // Passando a quantidade de perguntas para o componente
           />
         ))}
       </ScrollView>
-
       {/* <CustomTabNavigator /> */}
       
     </SafeAreaView>
