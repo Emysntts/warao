@@ -9,7 +9,7 @@ import ModulesPage from "screens/ModulesPage"
 
 export type StackExerciseLists = {
     home: undefined,
-    modules:undefined
+    modules: { text: string },
 }
 
 const Stack = createStackNavigator<StackExerciseLists>()
