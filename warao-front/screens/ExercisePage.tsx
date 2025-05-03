@@ -3,7 +3,9 @@ import { Platform } from 'expo-modules-core';
 import { StatusBar } from 'expo-status-bar';
 import { ScrollView } from 'react-native-gesture-handler';
 export const ExercisePage = () => {
+  // getbancco
 
+  // lista id, titulo e se está desbloqueado ou não
   const modulos= [
     {
       id: 1,
@@ -14,7 +16,7 @@ export const ExercisePage = () => {
     {
       id: 2,
       title: 'Apresentações',
-      isUnlocked: true
+      isUnlocked: false
     },
 
     {
