@@ -34,7 +34,7 @@ const ModulesPage = () => {
         ))}
       </ScrollView>
 
-      <CustomTabNavigator />
+      {/* <CustomTabNavigator /> */}
       
     </SafeAreaView>
     

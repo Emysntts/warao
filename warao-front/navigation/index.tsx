@@ -29,20 +29,7 @@ export default function RootStack() {
           component={TabNavigator}
           options={{ headerShown: false }}
         />
-        
-        <Stack.Screen 
-        name="ModulesPage"
-        component={ModulesPage} 
-        options={{ headerShown: false }} 
-        />
-
-        <Stack.Screen
-          name="QuestionPage"
-          component={QuestionPage}
-          options={{ headerShown: false }}
-  
-        />
-
+   
       </Stack.Navigator>
       
     </NavigationContainer>
