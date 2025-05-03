@@ -9,15 +9,16 @@ interface ExerciseLauncherProps {
   exerciseId: string;
   title: string; 
   circleCard: string;
+  moduleText: string;
 }
 
 type NavigationProp = StackNavigationProp<RootStackParamList, 'QuestionPage'>;
 
-const ExerciseLauncher: React.FC<ExerciseLauncherProps> = ({ exerciseId, title, circleCard }) => {
+const ExerciseLauncher: React.FC<ExerciseLauncherProps> = ({ exerciseId, title, circleCard, moduleText }) => {
   const navigation = useNavigation<NavigationProp>();
 
   const handlePress = () => {
-    navigation.navigate('QuestionPage');
+    navigation.navigate('QuestionPage', { moduleText });
   };
 
   return (
