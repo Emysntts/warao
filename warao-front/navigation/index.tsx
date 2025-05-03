@@ -29,6 +29,13 @@ export default function RootStack() {
           component={TabNavigator}
           options={{ headerShown: false }}
         />
+
+        <Stack.Screen
+          name="QuestionPage"
+          component={QuestionPage}
+          options={{ headerShown: false }}
+        />
+
    
       </Stack.Navigator>
       
