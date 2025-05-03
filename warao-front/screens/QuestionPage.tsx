@@ -20,12 +20,6 @@ const QuestionPage = () => {
       options: ['Jebura', 'Joko', 'Jene', 'Simo simo'],
       answer: '0',
     },
-    {
-      id: 2,
-      question: 'Qual é a capital da França?',
-      options: ['Paris', 'Londres', 'Berlim', 'Madri'],
-      answer: '1',
-    },
   
   ]
   
@@ -63,7 +57,7 @@ const QuestionPage = () => {
           ]}
           onSelect={(index) => {
             console.log(`Opção selecionada: ${index}`);
-            handleOptionSelect(index); // Chama a função para verificar a resposta
+            handleOptionSelect(index);
           }}
         />
       </View>

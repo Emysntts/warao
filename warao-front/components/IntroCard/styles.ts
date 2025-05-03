@@ -25,8 +25,7 @@ export const styles = StyleSheet.create({
   image: {
     width: 200,
     height: 200,
-    borderRadius: 120,
-    backgroundColor: '#E8E1DA',
+    backgroundColor: '#3B2414',
   },
 
   textContainer: {
