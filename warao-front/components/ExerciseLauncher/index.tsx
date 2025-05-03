@@ -10,15 +10,16 @@ interface ExerciseLauncherProps {
   title: string; 
   circleCard: string;
   moduleText: string;
+  quantidadePerguntas: number; // Adicionando a propriedade quantidadePerguntas
 }
 
 type NavigationProp = StackNavigationProp<RootStackParamList, 'QuestionPage'>;
 
-const ExerciseLauncher: React.FC<ExerciseLauncherProps> = ({ exerciseId, title, circleCard, moduleText }) => {
+const ExerciseLauncher: React.FC<ExerciseLauncherProps> = ({ exerciseId, title, circleCard, moduleText, quantidadePerguntas }) => {
   const navigation = useNavigation<NavigationProp>();
 
   const handlePress = () => {
-    navigation.navigate('QuestionPage', { moduleText });
+    navigation.navigate('QuestionPage', { moduleText, quantidadePerguntas });
   };
 
   return (

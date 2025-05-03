@@ -10,7 +10,7 @@ export type RootStackParamList = {
   Home: undefined;
   TabNavigator: undefined;
   ModulesPage: undefined;
-  QuestionPage: { moduleText: string };
+  QuestionPage: { moduleText: string, quantidadePerguntas: number };
 };
 
 const Stack = createStackNavigator<RootStackParamList>();
