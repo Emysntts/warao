@@ -7,14 +7,16 @@ export const ExercisePage = () => {
   const modulos= [
     {
       id: 1,
-      title: 'Saudações',
+      title: 'Primeiros Passos',
       isUnlocked: true
     },
+    
     {
       id: 2,
       title: 'Apresentações',
       isUnlocked: true
     },
+
     {
       id: 3,
       title: 'Números',
@@ -22,30 +24,23 @@ export const ExercisePage = () => {
     },
     {
       id: 4,
-      title: 'Cores',
+      title: 'Saude',
       isUnlocked: false
     },
+
     {
       id: 5,
-      title: 'Animais',
+      title: 'Locais',
       isUnlocked: false
     },
+
     {
       id: 6,
-      title: 'Comida',
+      title: 'Transporte',
       isUnlocked: false
-    },
-    {
-      id: 7,
-      title: 'Roupas',
-      isUnlocked: false
-    },
-    {
-      id: 8,
-      title: 'Verbos',
-      isUnlocked: false
-    },
-  ]
+    }
+    
+    ]
 
 
 
