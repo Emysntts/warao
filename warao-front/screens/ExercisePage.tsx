@@ -2,60 +2,53 @@ import ExerciseComp from 'components/Exercise';
 import { Platform } from 'expo-modules-core';
 import { StatusBar } from 'expo-status-bar';
 import { ScrollView } from 'react-native-gesture-handler';
-export const ExercisePage = () => {
+const ExercisePage = () => {
   // getbancco
 
   // lista id, titulo e se está desbloqueado ou não
-  const modulos= [
+  const modulos = [
     {
       id: 1,
       title: 'Primeiros Passos',
-      isUnlocked: true
+      isUnlocked: true,
     },
-    
+
     {
       id: 2,
       title: 'Apresentações',
-      isUnlocked: false
+      isUnlocked: false,
     },
 
     {
       id: 3,
       title: 'numeros',
       isUnlocked: true
+
     },
     {
       id: 4,
       title: 'Saude',
-      isUnlocked: false
+      isUnlocked: false,
     },
 
     {
       id: 5,
       title: 'Locais',
-      isUnlocked: false
+      isUnlocked: false,
     },
 
     {
       id: 6,
       title: 'Transporte',
-      isUnlocked: false
-    }
-    
-    ]
-
-
-
+      isUnlocked: false,
+    },
+  ];
 
   return (
     <>
-      <ScrollView className="bg-warao-sandcolor flex h-full flex-col p-5">
+      <ScrollView className="flex h-full flex-col bg-warao-sandcolor p-5">
         {modulos.map((modulo) => (
-          <ExerciseComp 
-            key={modulo.id} 
-            text={modulo.title} 
-            isUnlocked={modulo.isUnlocked} 
-          />
+          <ExerciseComp key={modulo.id} text={modulo.title} isUnlocked={modulo.isUnlocked} />
         ))}
       </ScrollView>
       <StatusBar style={Platform.OS === 'ios' ? 'light' : 'auto'} />
