@@ -1,8 +1,8 @@
 import { Ionicons } from '@expo/vector-icons';
 import { useFonts, Poppins_600SemiBold } from '@expo-google-fonts/poppins';
-import { View, Text, TouchableOpacity } from 'react-native';
 import { useNavigation, NavigationProp } from '@react-navigation/native';
 import { StackExerciseLists } from 'navigation/stack-exercise-navigation';
+import { View, Text, TouchableOpacity } from 'react-native';
 type ExerciseCompProps = {
   text: string;
   image?: string;
@@ -17,7 +17,7 @@ const ExerciseComp = (props: ExerciseCompProps) => {
 
   const handlePress = () => {
     if (props.isUnlocked) {
-      navigation.navigate('modules', { text: props.text }); 
+      navigation.navigate('modules', { text: props.text });
     } else {
       alert('Este módulo está bloqueado!');
     }
