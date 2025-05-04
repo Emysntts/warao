@@ -162,14 +162,7 @@ def main():
 
     question_warao = question_generator_portuguese_to_warao(dicionario_fil)
 
-    print(f"\n\nPergunta Portugues para Warao: {question_warao['question']}")
-    print("Opções:", question_warao["options"])
-    print("Resposta correta:", question_warao["options"][question_warao["answer"]])
-
-    question_portugues = question_generator_warao_to_portuguese(dicionario_fil)
-    print(f"\n\nPergunta Warao para Portgues: {question_portugues['question']}")
-    print("Opções:", question_portugues["options"])
-    print("Resposta correta:", question_portugues["options"][question_portugues["answer"]])
+    return question_warao
 
 
 

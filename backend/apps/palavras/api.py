@@ -44,3 +44,8 @@ def delete_palavra(request, palavra_id: int):
         return {"success": "Palavra deleted"}
     except Palavra.DoesNotExist:
         return {"error": "Palavra not found"}
+
+@palavras_router.get("/palavras/categoria/{categoria}/", response=List[PalavrasSchema])
+def get_palavras_por_categoria(request, categoria: str):
+    palavras = Palavra.objects.filter(categoria=categoria)
+    return palavras
