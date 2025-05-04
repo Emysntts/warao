@@ -60,7 +60,25 @@ def main():
         }
         print(f"Adicionando palavra: {word_data}")
         add_word_to_db(word_data)
+    
+    dicionario_saudacoes_portugues = {
+        "Bom dia": "Yakera Yokonae",
+        "Boa tarde": "Yakera Anakuarika",
+        "Boa noite": "Yakera Imaya",
+        "Como estás?": "Katukete",
+        "Tenho saúde, estou bem": "Bajukaya",
+        "Nós não vamos": "Diana oko naruya",
+        "Adeus": "Diana omi Nariya"
+    }
 
-
+    for palavra_portugues, palavra_warao in dicionario_saudacoes_portugues.items():
+        word_data = {
+            "palavraWarao": palavra_warao,
+            "palavraPortugues": palavra_portugues,
+            "categoria": "saudacoes"
+        }
+        print(f"Adicionando palavra: {word_data}")
+        add_word_to_db(word_data)
+        
 if __name__ == '__main__':
     main()
