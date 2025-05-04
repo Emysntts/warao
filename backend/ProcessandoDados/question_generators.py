@@ -101,39 +101,48 @@ def question_generator_warao_to_portuguese(dicionario: dict) -> dict:
         raise 
 
 #Funcao que gera pergunta para saber a traducao de uma palavra em portugues para warao
-def question_generator_portuguese_to_warao(dicionario: dict)->dict:
+def question_generator_portuguese_to_warao(dicionario: list) -> dict:
     try:
-        #Verificando se o dicionario nao esta vazio
+        # Verificando se o dicionário não está vazio
         if not dicionario:
             logging.error("DICIONARIO DE DADOS ESTA VAZIO")
             raise ValueError("DICIONARIO DE DADOS ESTA VAZIO")
         
-        #Listas das palavras em portugues e em warao
-        portuguese_words = list(dicionario.keys())
-        warao_words = list(dicionario.values())
-    
-        chosen_portuguese_word = random.choice(portuguese_words)
-        ans = dicionario.get(chosen_portuguese_word)
+        # Listas das palavras em português e em warao
+        portuguese_words = [item['palavraPortugues'] for item in dicionario]
+        warao_words = [item['palavraWarao'] for item in dicionario]
 
+        # Escolhendo uma palavra aleatória em português
+        portuguese_word = random.choice(portuguese_words)
+        ans = None
+
+        # Procurando a tradução correta da palavra escolhida
+        for item in dicionario:
+            if item['palavraPortugues'] == portuguese_word:
+                ans = item['palavraWarao']
+                break
+        
+        # Se não encontrar a tradução, lança um erro
         if not ans:
-            logging.error("RESPOSTA NAO ENCONTRADA NO DICIONARIO")
-            raise ValueError("RESPOSTA NAO ENCONTRADA NO DICIONARIO")
+            logging.error("ERRO AO ENCONTRAR POSSIVEL TRADUCAO DA PALAVRA EM PORTUGUES")
+            raise ValueError("Tradução não encontrada para a palavra em português.")
         
+        # Gerando a lista de opções de alternativas
         options = [ans]
-        if len(portuguese_words) >= 4:
+        if len(warao_words) >= 4:
             while len(options) < 4:
-                random_word = random.choice(warao_words)
-                if random_word not in options:
-                    options.append(random_word)
-        
+                random_option = random.choice(warao_words)
+                if random_option not in options:
+                    options.append(random_option)
         else:
-            logging.error("DICIONARIO POSSUI MENOS DE 4 CAMPOS")
-            raise ValueError("DICIONARIO POSSUI MENOS DE 4 CAMPOS")
+            logging.error("DICIONARIO MUITO PEQUENO, NAO POSSUI NEM 4 POSSIVEIS OPÇÕES")
+            raise ValueError("Dicionário precisa ter pelo menos 4 palavras para gerar opções.")
         
+        # Embaralhando as opções
         random.shuffle(options)
 
         result = {
-            "question": chosen_portuguese_word,
+            "question": portuguese_word,
             "question_type": "portugues",
             "options": options,
             "answer": options.index(ans),
@@ -151,10 +160,18 @@ def main():
     dicionario = get_all_words_from_db()
     dicionario_fil = filtro_categoria(dicionario, "numeros")
 
-    question_warao = question_generator_warao_to_portuguese(dicionario_fil)
+    question_warao = question_generator_portuguese_to_warao(dicionario_fil)
 
-    print("Pergunta Warao para Portugues:")
-    print(question_warao)
+    print(f"\n\nPergunta Portugues para Warao: {question_warao['question']}")
+    print("Opções:", question_warao["options"])
+    print("Resposta correta:", question_warao["options"][question_warao["answer"]])
+
+    question_portugues = question_generator_warao_to_portuguese(dicionario_fil)
+    print(f"\n\nPergunta Warao para Portgues: {question_portugues['question']}")
+    print("Opções:", question_portugues["options"])
+    print("Resposta correta:", question_portugues["options"][question_portugues["answer"]])
+
+
 
 
 if __name__ == '__main__':
