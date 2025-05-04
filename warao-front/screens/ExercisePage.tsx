@@ -21,8 +21,9 @@ const ExercisePage = () => {
 
     {
       id: 3,
-      title: 'Números',
-      isUnlocked: false,
+      title: 'numeros',
+      isUnlocked: true
+
     },
     {
       id: 4,
