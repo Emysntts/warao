@@ -9,13 +9,14 @@ palavras_router = Router()
 class PalavrasSchema(ModelSchema):
     class Config:
         model = Palavra
-        model_fields = ["palavraWarao", "palavraPortugues"]
+        model_fields = ["palavraWarao", "palavraPortugues", "categoria"]
 
 @palavras_router.post("/palavras/", response=PalavrasSchema)
 def post_palavra(request, palavra_data: PalavrasSchema):
     nova_palavra = Palavra(
         palavraWarao=palavra_data.palavraWarao,
-        palavraPortugues=palavra_data.palavraPortugues
+        palavraPortugues=palavra_data.palavraPortugues,
+        categoria=palavra_data.categoria,
     )
     print(nova_palavra)
     nova_palavra.save()
