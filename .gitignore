@@ -1,0 +1,30 @@
+# Arquivos do backend
+/backend/venv
+/backend/db.sqlite3
+
+# Arquivos do frontend
+/warao-front/node_modules/
+/warao-front/.expo/
+/warao-front/dist/
+warao-front/npm-debug.*
+warao-front/*.jks
+warao-front/*.p8
+warao-front/*.p12
+warao-front/*.key
+warao-front/*.mobileprovision
+warao-front/*.orig.*
+warao-front/web-build/
+
+# Pastas específicas do warao-front
+/warao-front/ios
+/warao-front/android
+
+# Regras gerais
+*.pyc
+__pycache__
+
+# macOS
+.DS_Store
+
+# Temporary files created by Metro to check the health of the file watcher
+.metro-health-check*
