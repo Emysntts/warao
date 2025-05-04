@@ -17,6 +17,7 @@ def post_palavra(request, palavra_data: PalavrasSchema):
         palavraWarao=palavra_data.palavraWarao,
         palavraPortugues=palavra_data.palavraPortugues
     )
+    print(nova_palavra)
     nova_palavra.save()
     return nova_palavra
 
