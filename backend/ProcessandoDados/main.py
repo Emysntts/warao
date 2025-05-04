@@ -61,7 +61,7 @@ def main():
                 "palavraPortugues": palavra_portugues,
                 "categoria": "numeros"
             }
-            print(f"Adicionando palavra: {word_data}")
+            
             add_word_to_db(word_data)
         
         dicionario_saudacoes_portugues = {
@@ -80,7 +80,7 @@ def main():
                 "palavraPortugues": palavra_portugues,
                 "categoria": "saudacoes"
             }
-            print(f"Adicionando palavra: {word_data}")
+        
             add_word_to_db(word_data)
     else:
         print("O banco de dados já contém palavras. Nenhuma palavra foi adicionada.")
