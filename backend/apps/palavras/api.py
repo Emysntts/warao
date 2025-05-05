@@ -2,6 +2,7 @@ from ninja import Router
 from ninja import ModelSchema, Schema
 from typing import List
 from apps.palavras.models import Palavra
+from ProcessandoDados.main import main 
 from ProcessandoDados.question_generators import (
     get_all_words_from_db,
     filtro_categoria,
@@ -73,3 +74,12 @@ def get_questions(request, categoria):
     except Exception as e:
         print("Erro na geração da pergunta:", str(e))  # Log do erro
         return {"error": str(e)}
+
+@palavras_router.get("/criar-banco/")
+def criar_banco(request):
+    try:
+        main()  # Chama a função main para popular o banco
+        return {"success": "Banco de dados criado e populado com sucesso!"}
+    except Exception as e:
+        return {"error": f"Erro ao criar o banco de dados: {str(e)}"}
+
