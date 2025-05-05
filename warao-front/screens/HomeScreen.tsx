@@ -12,7 +12,7 @@ const HomeScreen = () => {
   const navigation = useNavigation<HomeScreenNavigationProp>();
 
   const handlePress = () => {
-    navigation.navigate('TabNavigator');
+    navigation.navigate('PresentationPage');
   };
 
   return (
