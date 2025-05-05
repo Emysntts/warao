@@ -6,6 +6,7 @@ import { useEffect } from 'react';
 import { SafeAreaView, StyleSheet } from 'react-native';
 import { GetData } from 'store/AsyncStorageUtils';
 
+
 import type { RootStackParamList } from '../navigation';
 
 type HomeScreenNavigationProp = StackNavigationProp<RootStackParamList, 'TabNavigator'>;
@@ -35,6 +36,23 @@ const HomeScreen = () => {
   const handlePress = () => {
     navigation.navigate('PresentationPage');
   };
+
+  const handleCreateDatabase = async () => {
+    try {
+      const response = await axios.get('http://10.0.2.2:8000/palavras/criar-banco/');
+      if (response.data.success) {
+        console.log('Sucesso:', response.data.success);
+      } else {
+        console.log('Erro:', response.data.error || 'Erro desconhecido ao criar o banco.');
+      }
+    } catch (error: any) {
+      console.error('Erro ao criar o banco:', error.message);
+    }
+  };
+
+  useEffect(() => {
+    handleCreateDatabase();
+  }, []);
 
   return (
     <SafeAreaView style={styles.container}>
