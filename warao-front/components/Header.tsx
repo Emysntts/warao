@@ -1,3 +1,4 @@
+import { Ionicons } from '@expo/vector-icons';
 import { useFonts } from '@expo-google-fonts/poppins';
 import { Poppins_500Medium } from '@expo-google-fonts/poppins/500Medium';
 import { Poppins_600SemiBold } from '@expo-google-fonts/poppins/600SemiBold';
@@ -10,13 +11,15 @@ export default function Header() {
   const [username, setUsername] = useState('');
 
   useEffect(() => {
-    GetData('username').then((value) => setUsername(value));
+    GetData('username').then((value) => setUsername(value ?? 'NO USERNAME'));
   }, []);
 
   if (!fonts_loaded) return null;
   return (
     <View className="h-44 w-full flex-row items-center justify-start gap-6 rounded-b-xl bg-warao-brown pl-3 pt-10">
-      <View className="h-24 w-24 rounded-full border-2 border-white" />
+      <View className="flex h-24 w-24 items-center justify-center rounded-full border-2 bg-warao-sandcolor">
+        <Ionicons name="person" size={32} color="brown" />
+      </View>
       <View className="flex flex-col">
         <Text
           className="text-white"
