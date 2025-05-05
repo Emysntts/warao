@@ -24,7 +24,7 @@ const QuestionPage = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://10.0.2.2:8000/questions/questions?categoria=${moduleText}`);
+        const response = await axios.get(`http://10.0.2.2:8000/api/questions?categoria=${moduleText}`);
         const data = response.data.map((item: any, index: number) => ({
           id: index + 1,
           ...item,
