@@ -6,6 +6,64 @@ def main():
     if is_database_empty():
         print("O banco de dados está vazio. Adicionando palavras...")
 
+        dicionario_primeiros_passos_portugues = {
+            "PARA COMEÇAR": "ISIA NONAKITANE",
+            "Eu": "Ine",
+            "Tu": "Iji",
+            "Ele": "Tai",
+            "Vocês": "Yatu",
+            "Ela": "Warao Tida.",
+            "A gente / Nós": "Oko.",
+            "Vós": "Orikuare.",
+            "Eles": "Waractuma nibora.",
+            "Elas": "Waractuma Tida.",
+            "Senhor": "Daumata Nibora.",
+            "Senhora": "Daumata Tida.",
+            "Moça": "Eboma.",
+            "Moço": "Neburatu",
+            "Criança": "Noboto.",
+            "Amigo (Amiga)": "Maraisa",
+            "Vizinho (Vizinha)": "Mabere Ubatu.",
+            "Alguém": "Kasabukaja.",
+            "Ninguém": "Ekida.",
+            "Todo mundo": "Ina kokotuka.",
+            "As pessoas": "Waractuma.",
+            "O pessoal": "Tai Waractuma",
+            "Tudo": "Kokotuka.",
+            "Nada": "Ekida",
+            "Estou bem": "Ine Yakera.",
+            "Meu nome é": "Ine Mawai",
+            "Eu sou da Venezuela": "Ine Venezuela Yatamo.",
+            "Eu sou venezuelano": "Ine Venezolano yatamo",
+            "Eu falo": "Ine Dibuya.",
+            "Eu tenho...anos": "Ine Majoida ja.",
+            "Sim": "Nome.",
+            "Não": "Ekida.",
+            "Oi / Olá(s)": "Yakera (Yakerara)",
+            "Muito prazer": "Jī naminakitane.",
+            "Bom dia": "Yakera jokonae",
+            "Boa tarde": "Yakera anayara.",
+            "Boa noite": "Yakera anaira",
+            "Bem-vindo": "Yakera nabakamo/Yakera nabakkotu",
+            "Por favor": "Mamuau",
+            "Obrigado (Obrigada)": "Diana Yakera",
+            "Licença": "Oi",
+            "Desculpa": "Tomaneteya",
+        
+        }
+
+        for palavra_portugues, palavra_warao in dicionario_primeiros_passos_portugues.items():
+            word_data = {
+                "palavraWarao": palavra_warao,
+                "palavraPortugues": palavra_portugues,
+                "categoria": "primeiros_passos"
+            }
+            
+            add_word_to_db(word_data)
+
+        print ('Palavras Primeiros Passos adicionadas com sucesso!')
+
+
         dicionario_numeros_completos_portugues = {
             "Um": "Jisaka",
             "Uma": "Jisaka",
@@ -64,24 +122,10 @@ def main():
             
             add_word_to_db(word_data)
         
-        dicionario_saudacoes_portugues = {
-            "Bom dia": "Yakera Yokonae",
-            "Boa tarde": "Yakera Anakuarika",
-            "Boa noite": "Yakera Imaya",
-            "Como estás?": "Katukete",
-            "Tenho saúde, estou bem": "Bajukaya",
-            "Nós não vamos": "Diana oko naruya",
-            "Adeus": "Diana omi Nariya"
-        }
 
-        for palavra_portugues, palavra_warao in dicionario_saudacoes_portugues.items():
-            word_data = {
-                "palavraWarao": palavra_warao,
-                "palavraPortugues": palavra_portugues,
-                "categoria": "saudacoes"
-            }
-        
-            add_word_to_db(word_data)
+        print ('Palavras Números adicionadas com sucesso!')
+
+
     else:
         print("O banco de dados já contém palavras. Nenhuma palavra foi adicionada.")
         
