@@ -2,9 +2,14 @@ from ninja import Router
 from ninja import ModelSchema, Schema
 from typing import List
 from apps.palavras.models import Palavra
+from ProcessandoDados.question_generators import (
+    get_all_words_from_db,
+    filtro_categoria,
+    question_generator_portuguese_to_warao,
+)
 
 palavras_router = Router()
-
+router = Router()
 
 class PalavrasSchema(ModelSchema):
     class Config:
@@ -49,3 +54,21 @@ def delete_palavra(request, palavra_id: int):
 def get_palavras_por_categoria(request, categoria: str):
     palavras = Palavra.objects.filter(categoria=categoria)
     return palavras
+
+
+
+@router.get("/questions", response=List[dict])
+def get_questions(request, categoria: str = "numeros"):
+    try:
+        dicionario = get_all_words_from_db()
+        dicionario_filtrado = filtro_categoria(dicionario, categoria)
+        
+        questions = []
+        for _ in range(4): 
+            question = question_generator_portuguese_to_warao(dicionario_filtrado)
+            questions.append(question)
+
+        return questions
+    except Exception as e:
+        print("Erro na geração da pergunta:", str(e))  # Log do erro
+        return {"error": str(e)}
