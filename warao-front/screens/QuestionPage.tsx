@@ -114,7 +114,7 @@ const QuestionPage = () => {
 
       <View style={{ padding: 16 }}>
         <Question
-          text={`A palavra ${listperguntas[numeroPergunta].question} em ${listperguntas[numeroPergunta].question_type} é?`}
+          text={`A palavra "${listperguntas[numeroPergunta].question}" em ${listperguntas[numeroPergunta].question_type} é?`}
         />
         <Options
           options={listperguntas[numeroPergunta].options.map(
