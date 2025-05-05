@@ -1,4 +1,4 @@
-from adicionando_dicionarios import add_word_to_db, is_database_empty
+from .adicionando_dicionarios import add_word_to_db, is_database_empty
 import requests
 
 
