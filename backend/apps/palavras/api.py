@@ -60,16 +60,15 @@ def get_palavras_por_categoria(request, categoria: str):
 @router.get("/questions", response=List[dict])
 def get_questions(request, categoria: str = "numeros"):
     try:
-       
         dicionario = get_all_words_from_db()
-       
         dicionario_filtrado = filtro_categoria(dicionario, categoria)
-    
-       
-        question = question_generator_portuguese_to_warao(dicionario_filtrado)
-      
+        
+        questions = []
+        for _ in range(4): 
+            question = question_generator_portuguese_to_warao(dicionario_filtrado)
+            questions.append(question)
 
-        return [question]
+        return questions
     except Exception as e:
         print("Erro na geração da pergunta:", str(e))  # Log do erro
         return {"error": str(e)}
