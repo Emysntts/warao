@@ -2,7 +2,9 @@ import { useNavigation } from '@react-navigation/native';
 import type { StackNavigationProp } from '@react-navigation/stack';
 import IntroCard from 'components/IntroCard/Index';
 import { StatusBar } from 'expo-status-bar';
+import { useEffect } from 'react';
 import { SafeAreaView, StyleSheet } from 'react-native';
+import { GetData } from 'store/AsyncStorageUtils';
 
 import type { RootStackParamList } from '../navigation';
 
@@ -10,6 +12,25 @@ type HomeScreenNavigationProp = StackNavigationProp<RootStackParamList, 'TabNavi
 
 const HomeScreen = () => {
   const navigation = useNavigation<HomeScreenNavigationProp>();
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const username = await GetData('username');
+
+      // Aqui verifica se existe um username. Caso existe, redireciona para a rota de exercicio, sem ter a necessidade colocar nome novamente
+      if (username) {
+        navigation.reset({
+          index: 0,
+          routes: [
+            {
+              name: 'TabNavigator',
+            },
+          ],
+        });
+      }
+    };
+    fetchData();
+  }, []);
 
   const handlePress = () => {
     navigation.navigate('PresentationPage');

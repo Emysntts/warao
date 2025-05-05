@@ -27,10 +27,6 @@ function PresentationPage() {
       value: username,
     });
 
-    await StoreData({
-      key: 'initialState',
-      value: '0',
-    });
     navigation.navigate('TabNavigator');
   };
 
