@@ -60,6 +60,7 @@ def get_palavras_por_categoria(request, categoria: str):
 @router.get("/questions", response=List[dict])
 def get_questions(request, categoria):
     try:
+        categoria = categoria.lower().replace(" ", "_")
         dicionario = get_all_words_from_db()
         dicionario_filtrado = filtro_categoria(dicionario, categoria)
         
