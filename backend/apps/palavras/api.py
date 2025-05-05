@@ -75,7 +75,7 @@ def get_questions(request, categoria):
         print("Erro na geração da pergunta:", str(e))  # Log do erro
         return {"error": str(e)}
 
-@palavras_router.get("/criar-banco/")
+@router.get("/criar-banco/")
 def criar_banco(request):
     try:
         main()  # Chama a função main para popular o banco

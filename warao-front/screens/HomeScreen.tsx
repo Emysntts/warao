@@ -39,7 +39,7 @@ const HomeScreen = () => {
 
   const handleCreateDatabase = async () => {
     try {
-      const response = await axios.get('http://10.0.2.2:8000/palavras/criar-banco/');
+      const response = await axios.get('http://10.0.2.2:8000/api/criar-banco/');
       if (response.data.success) {
         console.log('Sucesso:', response.data.success);
       } else {
