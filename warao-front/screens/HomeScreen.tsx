@@ -36,6 +36,23 @@ const HomeScreen = () => {
     navigation.navigate('PresentationPage');
   };
 
+  const handleCreateDatabase = async () => {
+    try {
+      const response = await axios.get('http://10.0.2.2:8000/palavras/criar-banco/');
+      if (response.data.success) {
+        console.log('Sucesso:', response.data.success);
+      } else {
+        console.log('Erro:', response.data.error || 'Erro desconhecido ao criar o banco.');
+      }
+    } catch (error: any) {
+      console.error('Erro ao criar o banco:', error.message);
+    }
+  };
+
+  useEffect(() => {
+    handleCreateDatabase();
+  }, []);
+
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar backgroundColor="#3B2414" style="light" />

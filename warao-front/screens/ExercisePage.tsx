@@ -15,19 +15,19 @@ const ExercisePage = () => {
 
     {
       id: 2,
-      title: 'Apresentações',
-      isUnlocked: false,
+      title: 'Numeros',
+      isUnlocked: true,
     },
 
     {
       id: 3,
-      title: 'numeros',
-      isUnlocked: true
+      title: 'Saude',
+      isUnlocked: false,
 
     },
     {
       id: 4,
-      title: 'Saude',
+      title: 'Cores',
       isUnlocked: false,
     },
 
