@@ -2,6 +2,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { useFonts, Poppins_600SemiBold } from '@expo-google-fonts/poppins';
 import { useNavigation, NavigationProp } from '@react-navigation/native';
 import { StackExerciseLists } from 'navigation/stack-exercise-navigation';
+import { useEffect, useState } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 type ExerciseCompProps = {
   text: string;
@@ -13,6 +14,18 @@ type ExerciseCompProps = {
 const ExerciseComp = (props: ExerciseCompProps) => {
   const [fonts] = useFonts({ Poppins_600SemiBold });
   const navigation = useNavigation<NavigationProp<StackExerciseLists>>();
+  const [color, setColor] = useState('');
+
+  const getRandomColor = () => {
+    const colors = ['#A8DADC', '#457B9D', '#1D3557', '#E63946', '#F4A261', '#6D597A'];
+    return colors[Math.floor(Math.random() * colors.length)];
+  };
+
+  useEffect(() => {
+    const color = getRandomColor();
+    setColor(color);
+  }, []);
+
   if (!fonts) return null;
 
   const handlePress = () => {
@@ -27,7 +40,7 @@ const ExerciseComp = (props: ExerciseCompProps) => {
     <TouchableOpacity activeOpacity={0.8} onPress={handlePress} className="my-3">
       <View className="flex  w-full flex-row  items-center justify-between rounded-lg bg-white p-5">
         <View className="flex flex-row items-center gap-5">
-          <View className="h-16 w-16 rounded-full bg-blue-950 " />
+          <View style={{ backgroundColor: color }} className="h-16 w-16 rounded-full" />
           <Text
             style={{
               fontFamily: 'Poppins_600SemiBold',
