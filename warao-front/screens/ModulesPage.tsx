@@ -19,7 +19,7 @@ const ModulesPage = () => {
     '#FF4500', // Vermelho
   ];
 
-  const quantidadePerguntas = 5; // Aqui vamos chamar a função aonde vai pegar a quantidade de exercicios de cada modulo
+  const quantidadePerguntas = 4; // Aqui vamos chamar a função aonde vai pegar a quantidade de exercicios de cada modulo
 
   const route = useRoute<RouteProp<StackExerciseLists, 'modules'>>();
   const { text } = route.params; 
