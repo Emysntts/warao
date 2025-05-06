@@ -8,8 +8,8 @@ export interface UserState {
 
 export const useStore = create<UserState>((set) => ({
   username: '',
-  setUsername: (newUsername: string) => {
-    AsyncStorage.setItem('username', newUsername);
+  setUsername: async (newUsername: string) => {
+    await AsyncStorage.setItem('username', newUsername);
     set({ username: newUsername });
   },
   clearUsername: () => {
