@@ -37,40 +37,42 @@ export default function Header() {
   if (!fonts_loaded) return null;
 
   return (
-    <View className="h-44 w-full flex-row items-center justify-start gap-6 rounded-b-xl bg-warao-brown pl-3 pt-10">
-      <View className="flex h-24 w-24 items-center justify-center rounded-full border-2 bg-warao-sandcolor">
-        <Ionicons name="person" size={32} color="#3B2414" />
-      </View>
-      <View className="flex flex-col">
-        <Text
-          className="text-white"
+    <View className=' bg-warao-sandcolor'>
+      <View className="h-44 w-full flex-row items-center justify-start gap-6 rounded-b-xl bg-warao-brown pl-3 pt-10 ">
+        <View className="flex h-24 w-24 items-center justify-center rounded-full border-2 bg-warao-sandcolor">
+          <Ionicons name="person" size={32} color="#3B2414" />
+        </View>
+        <View className="flex flex-col">
+          <Text
+            className="text-white"
+            style={{
+              fontFamily: 'Poppins_600SemiBold',
+            }}>
+            {user}
+          </Text>
+          <Text
+            style={{
+              fontFamily: 'Poppins_500Medium',
+            }}
+            className="text-warao-green-dark">
+            Português Brasileño
+          </Text>
+        </View>
+        <TouchableOpacity
+          onPress={clearUsername}
           style={{
-            fontFamily: 'Poppins_600SemiBold',
+            marginLeft: 'auto',
+            marginRight: 8,
+            flexDirection: 'row',
+            alignItems: 'center',
+            backgroundColor: '#8B0000',
+            paddingHorizontal: 12,
+            paddingVertical: 8,
+            borderRadius: 8,
           }}>
-          {user}
-        </Text>
-        <Text
-          style={{
-            fontFamily: 'Poppins_500Medium',
-          }}
-          className="text-warao-green-dark">
-          Português Brasileño
-        </Text>
+          <Ionicons name="exit-outline" size={20} color="white" />
+        </TouchableOpacity>
       </View>
-      <TouchableOpacity
-        onPress={clearUsername}
-        style={{
-          marginLeft: 'auto',
-          marginRight: 8,
-          flexDirection: 'row',
-          alignItems: 'center',
-          backgroundColor: '#8B0000',
-          paddingHorizontal: 12,
-          paddingVertical: 8,
-          borderRadius: 8,
-        }}>
-        <Ionicons name="exit-outline" size={20} color="white" />
-      </TouchableOpacity>
     </View>
   );
 }

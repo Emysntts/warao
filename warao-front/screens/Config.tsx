@@ -40,7 +40,7 @@ function ConfigPage() {
   };
 
   return (
-    <View className="flex h-full w-full flex-col">
+    <View className="flex h-full w-full flex-col bg-warao-sandcolor">
       <TouchableOpacity
         onPress={() => setModalVisible(true)}
         className="flex w-full flex-row items-center justify-start gap-3  px-5 py-4">
