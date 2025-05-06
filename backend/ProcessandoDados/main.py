@@ -274,7 +274,7 @@ def main():
             word_data = {
                 "palavraWarao": palavra_warao,
                 "palavraPortugues": palavra_portugues,
-                "categoria": "locais"
+                "categoria": "transporte"
             }
             
             add_word_to_db(word_data)
