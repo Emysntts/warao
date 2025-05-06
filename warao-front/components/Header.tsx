@@ -11,14 +11,12 @@ export default function Header() {
   const [username, setUsername] = useState('');
 
   useEffect(() => {
-  feat/util
     GetData('username').then((value) => setUsername(value ?? 'NO USERNAME'));
   }, []);
 
   if (!fonts_loaded) return null;
   return (
     <View className="h-44 w-full flex-row items-center justify-start gap-6 rounded-b-xl bg-warao-brown pl-3 pt-10">
-      feat/util
       <View className="flex h-24 w-24 items-center justify-center rounded-full border-2 bg-warao-sandcolor">
         <Ionicons name="person" size={32} color="brown" />
       </View>

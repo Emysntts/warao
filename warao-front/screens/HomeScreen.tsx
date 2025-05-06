@@ -5,8 +5,7 @@ import { StatusBar } from 'expo-status-bar';
 import { useEffect } from 'react';
 import { SafeAreaView, StyleSheet } from 'react-native';
 import { GetData } from 'store/AsyncStorageUtils';
-
-
+import axios from 'axios';
 import type { RootStackParamList } from '../navigation';
 
 type HomeScreenNavigationProp = StackNavigationProp<RootStackParamList, 'TabNavigator'>;
