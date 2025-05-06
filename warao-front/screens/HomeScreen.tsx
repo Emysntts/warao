@@ -1,11 +1,13 @@
 import { useNavigation } from '@react-navigation/native';
 import type { StackNavigationProp } from '@react-navigation/stack';
+import axios from 'axios';
 import IntroCard from 'components/IntroCard/Index';
 import { StatusBar } from 'expo-status-bar';
 import { useEffect, useState } from 'react';
 import { SafeAreaView, StyleSheet } from 'react-native';
 import { GetData } from 'store/AsyncStorageUtils';
-import axios from 'axios';
+import { useStore } from 'store/store';
+
 import type { RootStackParamList } from '../navigation';
 
 type HomeScreenNavigationProp = StackNavigationProp<RootStackParamList, 'TabNavigator'>;
@@ -13,6 +15,7 @@ type HomeScreenNavigationProp = StackNavigationProp<RootStackParamList, 'TabNavi
 const HomeScreen = () => {
   const navigation = useNavigation<HomeScreenNavigationProp>();
   const [loading, setLoading] = useState(true);
+  const { setUsername } = useStore();
 
   const handlePress = () => {
     navigation.navigate('PresentationPage');
@@ -39,6 +42,7 @@ const HomeScreen = () => {
     const fetchData = async () => {
       const username = await GetData('username');
       if (username) {
+        setUsername(username);
         navigation.reset({
           index: 0,
           routes: [{ name: 'TabNavigator' }],
