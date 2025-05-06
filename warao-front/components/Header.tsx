@@ -2,26 +2,28 @@ import { Ionicons } from '@expo/vector-icons';
 import { useFonts } from '@expo-google-fonts/poppins';
 import { Poppins_500Medium } from '@expo-google-fonts/poppins/500Medium';
 import { Poppins_600SemiBold } from '@expo-google-fonts/poppins/600SemiBold';
-import { useEffect, useState } from 'react';
-import { View, Text, TouchableOpacity, Alert } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { GetData } from 'store/AsyncStorageUtils';
 import { useNavigation } from '@react-navigation/native';
 import type { StackNavigationProp } from '@react-navigation/stack';
 import type { RootStackParamList } from 'navigation';
+import { useEffect, useState } from 'react';
+import { View, Text, TouchableOpacity, Alert } from 'react-native';
+import { GetData } from 'store/AsyncStorageUtils';
+import { useStore } from 'store/store';
 
 type HeaderNavigationProp = StackNavigationProp<RootStackParamList, 'Home'>;
 
 export default function Header() {
   const [fonts_loaded] = useFonts({ Poppins_600SemiBold, Poppins_500Medium });
-  const [username, setUsername] = useState('');
+  const [user, setUser] = useState('');
+  const { username } = useStore();
   const navigation = useNavigation<HeaderNavigationProp>();
 
-  // Função para limpar o username e redirecionar
+  // Função para limpar o user e redirecionar
   const clearUsername = async () => {
     try {
       await AsyncStorage.removeItem('username');
-      setUsername('NO USERNAME'); 
+      setUser('NO USERNAME');
       navigation.navigate('Home'); // Redireciona para o Home
     } catch (error: any) {
       console.error('Erro ao limpar o username:', error.message);
@@ -29,8 +31,8 @@ export default function Header() {
   };
 
   useEffect(() => {
-    GetData('username').then((value) => setUsername(value ?? 'NO USERNAME'));
-  }, []);
+    GetData('username').then((value) => setUser(value ?? 'NO USERNAME'));
+  }, [username]);
 
   if (!fonts_loaded) return null;
 
@@ -45,7 +47,7 @@ export default function Header() {
           style={{
             fontFamily: 'Poppins_600SemiBold',
           }}>
-          {username}
+          {user}
         </Text>
         <Text
           style={{
@@ -68,7 +70,7 @@ export default function Header() {
           borderRadius: 8,
         }}>
         <Ionicons name="exit-outline" size={20} color="white" />
-              </TouchableOpacity>
+      </TouchableOpacity>
     </View>
   );
 }

@@ -1,15 +1,26 @@
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { create } from 'zustand';
-
-export interface BearState {
-  bears: number;
-  increasePopulation: () => void;
-  removeAllBears: () => void;
-  updateBears: (newBears: number) => void;
+export interface UserState {
+  username: string;
+  setUsername: (newUsername: string) => void;
+  clearUsername: () => void;
 }
 
-export const useStore = create<BearState>((set) => ({
-  bears: 0,
-  increasePopulation: () => set((state) => ({ bears: state.bears + 1 })),
-  removeAllBears: () => set({ bears: 0 }),
-  updateBears: (newBears) => set({ bears: newBears }),
+export const useStore = create<UserState>((set) => ({
+  username: '',
+  setUsername: async (newUsername: string) => {
+    await AsyncStorage.setItem('username', newUsername);
+    set({ username: newUsername });
+  },
+  clearUsername: () => {
+    AsyncStorage.removeItem('username');
+    set({ username: '' });
+  },
 }));
+
+// Initialize the store with the value from AsyncStorage
+AsyncStorage.getItem('username').then((storedUsername) => {
+  if (storedUsername) {
+    useStore.setState({ username: storedUsername });
+  }
+});
