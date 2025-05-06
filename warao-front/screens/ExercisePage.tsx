@@ -22,25 +22,25 @@ const ExercisePage = () => {
     {
       id: 3,
       title: 'Saude',
-      isUnlocked: false,
+      isUnlocked: true,
 
     },
     {
       id: 4,
       title: 'Cores',
-      isUnlocked: false,
+      isUnlocked: true,
     },
 
     {
       id: 5,
       title: 'Locais',
-      isUnlocked: false,
+      isUnlocked: true,
     },
 
     {
       id: 6,
       title: 'Transporte',
-      isUnlocked: false,
+      isUnlocked: true,
     },
   ];
 

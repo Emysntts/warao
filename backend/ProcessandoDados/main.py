@@ -125,6 +125,161 @@ def main():
 
         print ('Palavras Números adicionadas com sucesso!')
 
+        dicionario_saude_portugues = {
+            "Gripe": "Obo",
+            "Coriza": "Obo ainabara",
+            "Nariz entupido": "Nariz tapada / Obo aikari mokoronae",
+            "Tosse": "Waroba tiji tiji",
+            "Falta de ar": "Jajina yakera nabuaranaja",
+            "Dor de barriga / Dor de estômago": "Makobe ajera",
+            "Diarreia": "Jovito kimiya",
+            "Vômito": "Dokojiya",
+            "Constipação": "Joto tai",
+            "Estou sentindo dor": "Masia ajera",
+            "Vermes": "Kobejuba",
+            "Coceira": "Tiji tiji",
+            "Corte ou ferida": "Kabatanae",
+            "Inflamação": "Jokojoko",
+            "Sede": "Jobajera",
+            "Não consigo comer": "Nojo ekida",
+            "Fome": "Nojera",
+            "Não consigo dormir": "Ine obakumoni",
+            "Infecção": "Daisama majaya",
+            "Estou menstruando": "Ine mimai",
+            "Já menstruei": "Ine mimaiya",
+            "Absorventes": "Joto anamo",
+            "Não está chegando a menstruação": "Ine nemanja ine nejomanaja",
+            "Tenho cólica / dor": "Mobokabe ajera",
+            "Suspeito que estou grávida": "Ine kuaboyatai iana",
+            "Estou grávida": "Ine kuabu",
+            "Sou casada": "Ori ni saani",
+            "Não tenho filhos": "Manoboto ekida",
+            "Você faz alguma coisa para não engravidar?": "Yarokota kuruya kuabuanka katimate",
+            "Tive vários parceiros sexuais": "Nibora daisama isiko ori monikatai",
+            "Tenho apenas um parceiro sexual": "Nibo eraja asiiko ori monikatai",
+            "Não tive relações sexuais": "Totona",
+            "Não tenho relações sexuais": "No tengo relaciones sexuales",
+            "Mate tida ainaja (falei mulher)": "Se quem fala é mulher",
+            "Mate tida ajiina (falei homem)": "Se quem fala é homem",
+            "Vacinas": "Akosa abakitaine",
+            "Aleitar": "Ami orokitane",
+            "Hipertensão": "Botobetera",
+            "Hérnia": "Kabukari nabutónai",
+            "Pus": "Kunaje / Onobo",
+            "Tuberculose": "Obosabana",
+            "Enxaqueca": "Kawajera abane akuajera",
+            "Doença sexualmente transmissível": "Samorona",
+            "Infarto": "Jokarosinaka",
+            "Sangue": "Joto",
+            "Anemia": "Jene",
+            "HIV - AIDS": "Wabasabana",
+            "Diabetes": "Jotu diabeira",
+            "Câncer": "Ekusbana"
+        }
+
+        for palavra_portugues, palavra_warao in dicionario_saude_portugues.items():
+            word_data = {
+                "palavraWarao": palavra_warao,
+                "palavraPortugues": palavra_portugues,
+                "categoria": "saude"
+            }
+            
+            add_word_to_db(word_data)
+
+        print ('Palavras Saúde adicionadas com sucesso!')
+
+
+        dicionario_cores_portugues = {
+            "Azul": "Jebura",
+            "Vermelho": "Simo",
+            "Amarelo": "Jene",
+            "Verde": "Jebura",
+            "Branco": "Joko",
+            "Preto": "Ana",
+            "Laranja": "Jene",
+            "Rosa": "Simo simo",
+        }
+
+        for palavra_portugues, palavra_warao in dicionario_cores_portugues.items():
+            word_data = {
+                "palavraWarao": palavra_warao,
+                "palavraPortugues": palavra_portugues,
+                "categoria": "cores"
+            }
+            
+            add_word_to_db(word_data)
+
+        print ('Palavras Cores adicionadas com sucesso!')
+
+
+        dicionario_lugares_portugues = {
+            "Hotel": "Dara anijakana amuara isiko",
+            "Restaurante": "Najoro anijakana amuara isiko",
+            "Casa": "Janoko",
+            "Apartamento": "Dara amuara isiko Apartamento",
+            "Quitinete": "Dara ajanko yaroturo",
+            "Barraco": "Janoko yakera",
+            "Dentro de casa": "Janoko eku",
+            "Cozinha": "Sabanoko",
+            "Quarto": "Ubanoko",
+            "Sala": "Karata tiribunoko",
+            "Refeitório": "Najoro noko",
+            "Banheiro": "Kiminoko",
+            "Vaso": "Kiminoko ajuku ekida",
+            "Chuveiro": "Jo anakana",
+            "Quintal": "Kotubunoko",
+            "Cama": "Ubanoko anoko",
+            "Cadeira": "Dujunoko",
+            "Mesa": "Jabatanoko",
+            "Guarda-roupas": "Jiyaka anoko",
+            "Colchão": "Arai Ubanoko",
+            "Toalha": "Tejo berenoko",
+            "Lençol": "Simara",
+            "Cobertor": "Simarada",
+            "Travesseiro": "Kuanoko",
+            "Chave": "Itatanoko",
+            "Cadeado": "Itatanoko",
+            "Direção": "Omunoko kasabamo",
+            "À direita": "Mojo tamasaba",
+            "À esquerda": "Mojo",
+            "Direto": "Tamasaba"
+        }
+
+        for palavra_portugues, palavra_warao in dicionario_lugares_portugues.items():
+            word_data = {
+                "palavraWarao": palavra_warao,
+                "palavraPortugues": palavra_portugues,
+                "categoria": "locais"
+            }
+            
+            add_word_to_db(word_data)
+
+        print ('Palavras Locais adicionadas com sucesso!')
+
+
+        dicionario_transporte_portugues = {
+            "Avião": "Kuaya kujunoko",
+            "Barco": "Nabaida akujunoko",
+            "Canoa": "Wajibaka",
+            "Ônibus": "Ji barabara aida",
+            "Táxi": "Dubujida akujunoko",
+            "Motocicleta": "Barabara akujunoko",
+            "Carro": "Boto jebutanoko",
+            "Passagem": "Amuara isiko",
+            "Porto": "Nabakanoko",
+            "Aeroporto": "Kuaya anabakanoko"
+        }
+
+        for palavra_portugues, palavra_warao in dicionario_transporte_portugues.items():
+            word_data = {
+                "palavraWarao": palavra_warao,
+                "palavraPortugues": palavra_portugues,
+                "categoria": "locais"
+            }
+            
+            add_word_to_db(word_data)
+
+        print ('Palavras Transporte adicionadas com sucesso!')
 
     else:
         print("O banco de dados já contém palavras. Nenhuma palavra foi adicionada.")
