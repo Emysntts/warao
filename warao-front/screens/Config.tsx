@@ -10,6 +10,7 @@ import { RootStackParamList } from 'navigation';
 import { useState } from 'react';
 import { Modal, Text, TouchableOpacity, View } from 'react-native';
 import { StoreData } from 'store/AsyncStorageUtils';
+import { useStore } from 'store/store';
 
 type HomeScreenNavigationProp = StackNavigationProp<RootStackParamList, 'TabNavigator'>;
 
@@ -17,14 +18,12 @@ function ConfigPage() {
   const [fonts] = useFonts({ Poppins_500Medium });
   const [modalVisible, setModalVisible] = useState(false);
   const navigate = useNavigation<HomeScreenNavigationProp>();
+  const { setUsername } = useStore();
 
   if (!fonts) return null;
 
   const handleModalConfirm = async (username: string) => {
-    await StoreData({
-      key: 'username',
-      value: username,
-    });
+    setUsername(username);
     setModalVisible(false);
   };
 
