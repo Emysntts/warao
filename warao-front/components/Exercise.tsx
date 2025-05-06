@@ -17,7 +17,16 @@ const ExerciseComp = (props: ExerciseCompProps) => {
   const [color, setColor] = useState('');
 
   const getRandomColor = () => {
-    const colors = ['#A8DADC', '#457B9D', '#1D3557', '#E63946', '#F4A261', '#6D597A'];
+    const colors = [    
+      '#5A4B81', // Roxo
+      '#FF6B35', // Laranja
+      '#6B8E23', // Verde
+      '#D2691E', // Marrom
+      '#FFD700', // Amarelo
+      '#FCE2A9', // Bege
+      '#8A2BE2', // Azul
+      '#FF4500', // Vermelho 
+];
     return colors[Math.floor(Math.random() * colors.length)];
   };
 

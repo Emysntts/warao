@@ -37,7 +37,7 @@ export default function Header() {
   return (
     <View className="h-44 w-full flex-row items-center justify-start gap-6 rounded-b-xl bg-warao-brown pl-3 pt-10">
       <View className="flex h-24 w-24 items-center justify-center rounded-full border-2 bg-warao-sandcolor">
-        <Ionicons name="person" size={32} color="brown" />
+        <Ionicons name="person" size={32} color="#3B2414" />
       </View>
       <View className="flex flex-col">
         <Text
