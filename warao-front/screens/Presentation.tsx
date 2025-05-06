@@ -33,7 +33,7 @@ function PresentationPage() {
   if (!fonts) return null;
 
   return (
-    <View className="flex h-full w-full flex-col items-center justify-start">
+    <View className="flex h-full w-full flex-col items-center justify-start  bg-warao-sandcolor">
       <View className="flex h-96 w-full items-center justify-center rounded-b-[3rem] bg-warao-brown">
         <Image
           source={require('../assets/images/Logo.png')}
