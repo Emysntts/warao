@@ -8,7 +8,7 @@ type ButtonProps = {
 export const Button = forwardRef<View, ButtonProps>(({ title, ...touchableProps }, ref) => {
   return (
     <TouchableOpacity style={styles.button} onPress={touchableProps.onPress}>
-      <Text style={styles.buttonText}>Prosseguir</Text>
+      <Text style={styles.buttonText}>{title}</Text>
     </TouchableOpacity>
   );
 });

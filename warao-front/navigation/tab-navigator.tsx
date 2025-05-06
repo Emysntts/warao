@@ -2,6 +2,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Header from 'components/Header';
 import AboutUsPage from 'screens/AboutUs';
+import ConfigPage from 'screens/Config';
 
 import { StackRouteExerciseLayout } from './stack-exercise-navigation';
 
@@ -35,6 +36,14 @@ export default function TabLayout() {
         options={{
           headerShown: false,
           tabBarIcon: () => <Ionicons name="help-circle" size={30} color="white" />,
+        }}
+      />
+      <Tab.Screen
+        name="config"
+        component={ConfigPage}
+        options={{
+          header: () => <Header />,
+          tabBarIcon: () => <Ionicons name="settings" color="white" size={28} />,
         }}
       />
     </Tab.Navigator>
