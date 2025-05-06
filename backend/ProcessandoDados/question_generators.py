@@ -93,6 +93,7 @@ def question_generator_warao_to_portuguese(dicionario: dict) -> dict:
 
         }
 
+        print(result)
         return result
 
     #Tratamento de erros
@@ -160,7 +161,7 @@ def main():
     dicionario = get_all_words_from_db()
     dicionario_fil = filtro_categoria(dicionario, "numeros")
 
-    question_warao = question_generator_portuguese_to_warao(dicionario_fil)
+    question_warao = question_generator_warao_to_portuguese(dicionario_fil)
 
     return question_warao
 

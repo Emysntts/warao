@@ -6,7 +6,7 @@ from ProcessandoDados.main import main
 from ProcessandoDados.question_generators import (
     get_all_words_from_db,
     filtro_categoria,
-    question_generator_portuguese_to_warao,
+    question_generator_warao_to_portuguese,
 )
 
 palavras_router = Router()
@@ -67,7 +67,7 @@ def get_questions(request, categoria):
         
         questions = []
         for _ in range(4): 
-            question = question_generator_portuguese_to_warao(dicionario_filtrado)
+            question = question_generator_warao_to_portuguese(dicionario_filtrado)
             questions.append(question)
 
         return questions
