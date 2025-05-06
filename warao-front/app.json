@@ -2,6 +2,7 @@
   "expo": {
     "name": "warao-front",
     "slug": "warao-front",
+    "windowSoftInputMode": "adjustPan",
     "androidNavigationBar": {
       "visible": "sticky-immersive"
     } ,
