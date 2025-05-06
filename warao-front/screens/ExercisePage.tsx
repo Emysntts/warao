@@ -51,7 +51,7 @@ const ExercisePage = () => {
           <ExerciseComp key={modulo.id} text={modulo.title} isUnlocked={modulo.isUnlocked} />
         ))}
       </ScrollView>
-      <StatusBar style={Platform.OS === 'ios' ? 'light' : 'auto'} />
+      <StatusBar backgroundColor="#3B2414" style="light" />
     </>
   );
 };

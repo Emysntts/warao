@@ -53,7 +53,7 @@ function AboutUsPage() {
 
   return (
     <ScrollView>
-      <View className="h-full w-full flex-col items-center justify-start gap-10 pb-2 ">
+      <View className="h-full w-full flex-col items-center justify-start gap-10 pb-2  bg-warao-sandcolor ">
         <View className=" w-full items-center justify-center rounded-b-[3rem] bg-warao-brown p-14">
           <Image source={Logo} resizeMode="contain" className="h-52 w-52" />
         </View>
