@@ -1,6 +1,6 @@
 import { useFonts, Poppins_600SemiBold, Poppins_500Medium } from '@expo-google-fonts/poppins';
 import MemberAvatar from 'components/MemberAvatar';
-import { Image, View, ScrollView, Text } from 'react-native';
+import { Image, View, ScrollView, Text, StyleSheet, FlatList } from 'react-native';
 
 const Logo = require('../assets/images/Logo.png');
 
@@ -19,41 +19,48 @@ function AboutUsPage() {
     {
       name: 'Ícaro Mori',
       role: 'Coordenador',
+      image_url: require('../assets/images/Icaro.png'),
     },
     {
       name: 'Daniel Victor',
       role: 'Coordenador',
-    },
-    {
-      name: 'Carlos Freitas',
-      role: 'Fullstack',
-      image_url: require('../assets/images/Carlos.jpg'),
-    },
-    {
-      name: 'Emyle dos Santos',
-      role: 'Project Manager',
+      image_url: require('../assets/images/Daniel.png'),
     },
     {
       name: 'Jonatas Miguel',
-      role: 'Front-End',
+      role: 'Front-End Developer',
+      image_url: require('../assets/images/Jonatas.png'),
+    },
+    {
+      name: 'Emyle dos Santos',
+      role: 'System Architect',
+      image_url: require('../assets/images/Emyle.jpeg'),
+    },
+    {
+      name: 'Carlos Freitas',
+      role: 'Fullstack Dev',
+      image_url: require('../assets/images/Carlos.jpg'),
     },
     {
       name: 'Victor Reis',
-      role: 'Back-end',
+      role: 'Data Analyst',
+      image_url: require('../assets/images/Vitor.jpeg'),
     },
     {
       name: 'Larissa Cristiana',
-      role: 'Data Analysis',
+      role: 'Data Analyst',
+      image_url: require('../assets/images/Larissa.png'),
     },
     {
       name: 'Lucas Rabay',
-      role: 'Data Analysis',
+      role: 'Data Analyst',
+      image_url: require('../assets/images/Lucas.jpeg'),
     },
   ];
 
   return (
     <ScrollView>
-      <View className="h-full w-full flex-col items-center justify-start gap-10 pb-2  bg-warao-sandcolor ">
+      <View className="h-full w-full flex-col items-center justify-start gap-10 bg-warao-sandcolor  pb-2 ">
         <View className=" w-full items-center justify-center rounded-b-[3rem] bg-warao-brown p-14">
           <Image source={Logo} resizeMode="contain" className="h-52 w-52" />
         </View>
@@ -98,7 +105,24 @@ function AboutUsPage() {
           Equipe responsável
         </Text>
 
-        <View className="flex w-full flex-row flex-wrap justify-center gap-4">
+        <FlatList
+          data={teamMembers}
+          numColumns={2}
+          scrollEnabled={false}
+          columnWrapperStyle={{
+            width: '100%',
+            justifyContent: 'space-around',
+          }}
+          contentContainerStyle={{
+            width: '100%',
+          }}
+          renderItem={({ item }) => (
+            <MemberAvatar funcao={item.role} nome={item.name} imgUrl={item.image_url} />
+          )}
+        />
+
+        {/* 
+        <View className="grid grid-cols-2 grid-rows-4 gap-4">
           {teamMembers.map((member, i) => (
             <MemberAvatar
               key={i}
@@ -106,8 +130,8 @@ function AboutUsPage() {
               nome={member.name}
               imgUrl={member.image_url}
             />
-          ))}
-        </View>
+          ))} 
+        </View> */}
       </View>
     </ScrollView>
   );

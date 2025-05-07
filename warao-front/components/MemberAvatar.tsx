@@ -4,6 +4,8 @@ interface MemberAvatarProps {
   funcao: string;
   nome: string;
   imgUrl?: string;
+  col_start?: string;
+  row_start?: string;
 }
 
 function MemberAvatar(props: MemberAvatarProps) {
