@@ -42,12 +42,12 @@ function AboutUsPage() {
       image_url: require('../assets/images/Carlos.jpg'),
     },
     {
-      name: 'Victor Reis',
+      name: 'Vitor Reis',
       role: 'Data Analyst',
       image_url: require('../assets/images/Vitor.jpeg'),
     },
     {
-      name: 'Larissa Cristiana',
+      name: 'Larissa Cristina',
       role: 'Data Analyst',
       image_url: require('../assets/images/Larissa.png'),
     },
